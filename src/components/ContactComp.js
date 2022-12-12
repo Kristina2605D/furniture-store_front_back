@@ -1,12 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react';
 import { FiMapPin, FiPhoneCall } from "react-icons/fi";
 import { HiOutlineMailOpen } from "react-icons/hi";
 const Contacts = () => {
+  const [state, setState] = useState('')
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setState ((prevState) => {
+      return {...prevState, [name]: value}
+    })
+  }
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log(state)
+  }
   return (
     <section className='contact_us'>
       <div className='content_us'>
         <h2>Contact Us</h2>
-        
+
       </div>
       <div className='container_cont'>
         <div className='contact_info'>
@@ -34,18 +45,18 @@ const Contacts = () => {
           </div>
         </div>
         <div className='contactForm'>
-          <form>
+          <form onSubmit={handleSubmit}>
             <h2>Send Message</h2>
             <div className='inputBox'>
-              <input type='text_count' name='' required />
+              <input onChange={handleChange} type='text_count' name='fullname' required />
               <span>Full Name</span>
             </div>
             <div className='inputBox'>
-              <input type='text_' name='' required />
+              <input onChange={handleChange} type='text_' name='email' required />
               <span>Email</span>
             </div>
             <div className='inputBox'>
-              <textarea required></textarea>
+              <textarea onChange={handleChange} name = 'text' required></textarea>
               <span>Type your Message...</span>
             </div>
             <div className='inputBox'>

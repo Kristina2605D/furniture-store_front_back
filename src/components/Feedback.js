@@ -9,8 +9,8 @@ const Feedback = () => {
 
             <div className='right_sec'>
                 <h3 className='feed-sec'>Our customers are verry importan to us</h3>
-                <p className=''>All of our furniture uses the best matials and choices for our customers.<br />
-                    All of our furniture uses the best materials and choices for our customers.</p>
+                <p className='feed_sec'>All of our furniture uses the best matials and choices for our customers.<br />
+                Excellent customer service.</p>
 
             </div>
 

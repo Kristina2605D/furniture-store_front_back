@@ -13,12 +13,12 @@ const About = () => {
           <h3>
             About us
           </h3>
-          <p className='about-p'><b>All of our furniture uses the best<br />materials and choices for our customers.<br />All of our furniture uses the best materials.</b></p>
+          <p className='about-p'><b>We create chairs, tables, and furnishings for community, work and home.<br /> We frame everything—our soft, essential design sensibility, our direct and <br /> personalized service, our organizational and corporate policies, our global</b>.</p>
           <div className='info-icons'>
             <img src='/images/pictures1.svg'></img>
 
             <div> <h4>Best Quality</h4>
-              <p>All of our furniture uses the best materials and choices</p>
+              <p>Modern design with Competitive Price.</p>
             </div>
           </div>
 

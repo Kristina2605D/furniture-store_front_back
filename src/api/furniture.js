@@ -1,4 +1,5 @@
- const furniture = [{
+const productsArray = [{
+    id: '1',
     title: "Living Room",
     price: 1000,
     imgUrl: "images/bedroom1.jpg",
@@ -6,6 +7,7 @@
 },
 
 {
+    id: '2',
     title: "Living Room",
     price: 1000,
     imgUrl: "images/bedroom2.jpg",
@@ -13,6 +15,7 @@
 },
 
 {
+    id: '3',
     title: "Living Room",
     price: 1000,
     imgUrl: "images/bedroom3.jpg",
@@ -20,6 +23,7 @@
 },
 
 {
+    id: '4',
     title: "Kitchen",
     price: 1000,
     imgUrl: "images/kitchen1.jpg",
@@ -27,6 +31,7 @@
 },
 
 {
+    id: '5',
     title: "Kitchen",
     price: 1000,
     imgUrl: "images/kitchen2.jpg",
@@ -34,6 +39,7 @@
 },
 
 {
+    id: '6',
     title: "Kitchen",
     price: 1000,
     imgUrl: "images/kitchen3.jpg",
@@ -41,6 +47,7 @@
 },
 
 {
+    id: '7',
     title: "Dinning Room",
     price: 1000,
     imgUrl: "images/dinningRoom1.jpg",
@@ -48,6 +55,7 @@
 },
 
 {
+    id: '8',
     title: "Dinning Room",
     price: 1000,
     imgUrl: "images/dinningRoom2.jpg",
@@ -55,6 +63,7 @@
 },
 
 {
+    id: '9',
     title: "Dinning Room",
     price: 1000,
     imgUrl: "images/dinningRoom3.jpg",
@@ -62,6 +71,7 @@
 },
 
 {
+    id: '10',
     title: "Office",
     price: 1000,
     imgUrl: "images/office1.jpg",
@@ -69,6 +79,7 @@
 },
 
 {
+    id: '11',
     title: "Office",
     price: 1000,
     imgUrl: "images/office2.jpg",
@@ -76,6 +87,7 @@
 },
 
 {
+    id: '12',
     title: "Office",
     price: 1000,
     imgUrl: "images/office3.jpg",
@@ -83,6 +95,7 @@
 },
 
 {
+    id: '13',
     title: "Bedroom",
     price: 1000,
     imgUrl: "images/bedroom1.jpg",
@@ -90,6 +103,7 @@
 },
 
 {
+    id: '14',
     title: "Bedroom",
     price: 1000,
     imgUrl: "images/bedroom2.jpg",
@@ -97,6 +111,7 @@
 },
 
 {
+    id: '15',
     title: "Bedroom",
     price: 1000,
     imgUrl: "images/bedroom3.jpg",
@@ -104,6 +119,7 @@
 },
 
 {
+    id: '16',
     title: "Hallway",
     price: 1000,
     imgUrl: "images/hallway1.jpg",
@@ -111,6 +127,7 @@
 },
 
 {
+    id: '17',
     title: "Hallway",
     price: 1000,
     imgUrl: "images/hallway2.jpg",
@@ -118,6 +135,7 @@
 },
 
 {
+    id: '18',
     title: "Hallway",
     price: 1000,
     imgUrl: "images/hallway3.jpg",
@@ -126,7 +144,17 @@
 
 
 ]
-export default furniture;
+
+function getProductData(id) {
+    let productData = productsArray.find(product => product.id === id);
+
+    if (productData === undefined) {
+        console.log('Product data does not exist for ID:' + id);
+        return undefined;
+    }
+    return productData;
+}
+export { productsArray, getProductData };
 
 
 

@@ -1,5 +1,6 @@
 import React from 'react';
-import furniture from '../api/furniture';
+import { productsArray } from '../api/furniture';
+import ProductCart from './ProductCart';
 
 const Products = () => {
   return (
@@ -8,17 +9,9 @@ const Products = () => {
       <p><b>All of our furniture uses the best materials and choices for our customers.<br />
         All of our furniture uses the best materials and choices for our customers.</b></p>
       <div className='box'>
-        {furniture.map((elem, index) => (
-          <div className='box_list' key={index}>
-            <div className='image_wrapper'>
-              <img src={elem.imgUrl} alt='img' />
-            </div>
-            <div className='box_info'>
-              <h3>{elem.title}</h3>
-              <div className='price'><span>Price {elem.price}$</span>
-                <button className='buy'>Buy now</button>
-              </div>
-            </div>
+        {productsArray.map((elem, index) => (
+          <div key={index}>
+            <ProductCart product={elem} />
           </div>
         ))}
       </div>

@@ -4,7 +4,10 @@ import { useForm } from 'react-hook-form';
 export default function Register() {
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm()
-    const onSubmit = data => console.log(data);
+    const onSubmit = (data, e ) =>{
+        console.log(data)
+       e.target.reset()
+   } 
 
 
 

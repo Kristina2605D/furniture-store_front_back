@@ -1,6 +1,7 @@
-body {
+body,
+html {
     background-color: #ECE9E9;
-
+    scroll-behavior: smooth;
 }
 
 .menu-wrapper {
@@ -18,6 +19,14 @@ body {
     a {
         text-decoration: none;
         color: black;
+        padding: 5px 10px;
+        border-radius: 5px;
+        transition: all .5s ease-in-out;
+
+        &:hover {
+            background-color: #164646;
+            color: white;
+        }
     }
 
 
@@ -58,7 +67,7 @@ body {
     color: #D7D6D2;
     z-index: 10;
     margin-top: 90px;
-    
+
 
     h3 {
         font-size: 32px;
@@ -282,6 +291,7 @@ ul {
     height: auto;
     padding: 80px 50px;
     background-color: #ECE9E9;
+
 }
 
 .image_wrapper {
@@ -300,6 +310,7 @@ ul {
     flex-wrap: wrap;
     justify-content: center;
     padding: 50px 0;
+
 }
 
 .box_list {
@@ -310,12 +321,15 @@ ul {
 }
 
 .box_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding: 10px 20px 20px 20px;
 }
 
 .price {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     padding: 10px 0;
     align-items: center;
 }
@@ -328,8 +342,23 @@ ul {
 }
 
 .title_products {
-    font-size: 32px;
+    font-size: 28px;
+    text-align: center;
 }
+
+.deletebtn {
+    padding: 5px 10px;
+    background-color: #16464675;
+    border: none;
+    border-radius: 8px;
+    box-shadow: -1px 10px 10px 0px rgba(0, 0, 0, 0.75);
+}
+
+.title_h3{
+    text-align: center;
+}
+
+
 
 //Feedback
 
@@ -344,7 +373,7 @@ ul {
         text-align: center;
         margin: 100px 0 50px 0;
     }
-   
+
 
     .img_sec {
         border-radius: 20px;
@@ -449,7 +478,14 @@ ul {
     position: relative;
     width: 100%;
     margin-top: 10px;
+
+    input[type=submit]:active {
+        background-color: #164646;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+    }
 }
+
 
 .contactForm .inputBox input,
 .contactForm .inputBox textarea {
@@ -512,6 +548,17 @@ ul {
     }
 }
 
+.mapContact {
+    width: 450px;
+    padding: 40px;
+    background: #bfc3c462;
+    border-radius: 20px;
+    box-shadow: -1px 10px 116px 0px rgba(0, 0, 0, 0.75);
+    display: flex;
+}
+
+
+
 //Register
 
 .register {
@@ -530,6 +577,14 @@ ul {
         color: black;
         font-size: 15px;
         padding: 0 10px;
+
+        border-radius: 5px;
+        transition: all .5s ease-in-out;
+
+        &:hover {
+            background-color: #164646;
+            color: white;
+        }
     }
 }
 
@@ -547,6 +602,12 @@ ul {
 .btn {
     border: 1px solid #e9ecef;
     padding: .9em 1em;
+
+    &:active {
+        background-color: #164646;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+    }
 }
 
 #form>input:focus {
@@ -601,7 +662,7 @@ ul {
 
 .modalBtn {
     padding: 1px 55px;
-   border-radius: 15px;
+    border-radius: 15px;
     border: none;
     box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.75);
     background-color: #4d4d4d0b;
@@ -628,6 +689,9 @@ ul {
 
 .modalRight {
     width: 100%;
+    background-color: #c4bab077;
+    box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.75);
+
 }
 
 .modal_closeBtn {

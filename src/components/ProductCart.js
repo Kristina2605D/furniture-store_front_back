@@ -1,40 +1,76 @@
-import { Card, Button, Form, Row, Col } from 'react-bootstrap';
 import { CartContext } from '../CartContext';
 import { useContext } from 'react';
-
+import { PayPalScriptProvider } from '@paypal/react-paypal-js';
+import Button from "./Button";
 function ProductCard(props) {
-    const product = props.product;
-    const cart = useContext(CartContext);
-    const productQuantity = cart.getProductQuantity(product.id);
-    console.log(cart.items);
-    return (
-        <Card className = 'box_list'>
-            <Card.Body>
-                <div className='image_wrapper'>
-                    <img src={product.imgUrl} alt='img' />
-                </div>
-                <div className='box_info'>
-                    <h3>{product.title}</h3>
-                    <div className='price'><span>Price {product.price}$</span>
-                        {productQuantity > 0 ?
-                            <>
-                                <Form as={Row}>
-                                    <Form.Label column="true" sm="6">In Cart: {productQuantity}</Form.Label>
-                                    <Col sm="6">
-                                        <Button sm="6" onClick={() => cart.addOneToCart(product.id)} className="mx-2">+</Button>
-                                        <Button sm="6" onClick={() => cart.removeOneFromCart(product.id)} className="mx-2">-</Button>
-                                    </Col>
-                                </Form>
-                                <Button variant="danger" onClick={() => cart.deleteFromCart(product.id)} className="my-2">Remove from cart</Button>
-                            </>
-                            :
-                            <Button className='buy' variant="primary" onClick={() => cart.addOneToCart(product.id)}>Add To Cart</Button>
-                        }
-                    </div>
-                </div>
-            </Card.Body>
-        </Card>
-    )
+  const product = props.product;
+  const cart = useContext(CartContext);
+  const productQuantity = cart.getProductQuantity(product.id);
+  const initialOptions = {
+    "client-id": process.env.REACT_APP_CLIENT_ID,
+    currency: "USD",
+    intent: "capture",
+    components: "buttons",
+};
+  console.log(cart.items);
+  return (
+    <div className="box_list">
+      <div className="image_wrapper">
+        <img src={product.imgUrl} alt="img" />
+      </div>
+      <div className="box_info">
+        <h3 className='title_h3'>{product.title}</h3>
+        <div className="price">
+          <span> {product.price}$</span>
+
+          {productQuantity > 0 ? (
+            <>
+              <form>
+                <label className="label">In Cart: {productQuantity}</label>
+
+                <button
+                  onClick={(e) => {
+                    e.preventDefault()
+                    cart.addOneToCart(product.id)
+                  }}
+                  className="addPlus"
+                >
+                  +
+                </button>
+                <button
+                  onClick={() => cart.removeOneFromCart(product.id)}
+                  className="removebtn "
+                >
+                  -
+                </button>
+              </form>
+              <div>
+                <PayPalScriptProvider options={initialOptions}>
+                  <Button product={product} />
+                </PayPalScriptProvider>
+              </div>
+              <button
+                onClick={() => cart.deleteFromCart(product.id)}
+                className="deletebtn"
+              >
+                Remove from cart
+              </button>
+            </>)
+            :
+            (
+              <button
+                className="buy"
+                variant="primary"
+                onClick={() => cart.addOneToCart(product.id)}
+              >
+                Add To Cart
+              </button>
+            )}
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default ProductCard;
+

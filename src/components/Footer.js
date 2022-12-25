@@ -1,7 +1,7 @@
 import React from 'react'
 import {BsFacebook, BsGithub} from 'react-icons/bs';
 import {FiTwitter, FiInstagram} from 'react-icons/fi';
-
+import { Link } from 'react-router-dom';
 
 const footer = () => {
   return (
@@ -17,19 +17,18 @@ const footer = () => {
 				<div className="footer-col">
 					<h4>take a tour</h4>
 					<ul>
-						<li><a href="#">Features</a></li>
-						<li><a href="#">Pricing</a></li>
-						<li><a href="#">Product</a></li>
-						<li><a href="#">Support</a></li>
+						<li><Link to = '/feauters'>Features</Link></li>
+						<li><Link to = '/feauters'>Pricing</Link></li>
+						<li><Link to = '/feauters'>Product</Link></li>
+						
 					</ul>
 				</div>
 				<div className="footer-col">
 					<h4>Our company</h4>
 					<ul>
-						<li><a href="#">About Us</a></li>
-						<li><a href="#">Blog</a></li>
+					<li><Link to = '/about'>About Us</Link></li>
 						<li><a href="#">Media</a></li>
-						<li><a href="#">Contact Us</a></li>
+						<li><Link to = '/contact'>Contact Us</Link></li>
 					</ul>
 				</div>
 				<div className="footer-col">
